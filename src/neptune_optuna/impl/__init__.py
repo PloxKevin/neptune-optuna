@@ -622,7 +622,7 @@ def _log_single_trial(run, study: optuna.Study, trial: optuna.trial.FrozenTrial,
             handle["params"] = stringify_unsupported(trial.params)
             handle["value|params"] = f"value: {trial.value}| params: {trial.params}"
         else:
-            handle["values"].append(stringify_unsupported(trial.value), step=trial._trial_id)
+            handle["values"].append(trial.value, step=trial._trial_id)
             handle["params"].append(stringify_unsupported(trial.params))
             handle["values|params"].append(f"value: {trial.value}| params: {trial.params}")
 
